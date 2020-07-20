@@ -1,0 +1,23 @@
+yolo_model:
+
+  config_file:
+    name: yolov3-ycb.cfg
+  weight_file:
+    name: yolov3-ycb.weights
+  threshold:
+    value: 0.7
+  detection_classes:
+    names:
+      - bleach
+      - chips
+      - coffee
+      - cracker
+      - jello
+      - mustard
+      - pitcher
+      - pottedmeat
+      - pudding
+      - sugar
+      - tomatosoup
+      - tuna 
+      - windex
