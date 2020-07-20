@@ -27,7 +27,7 @@ if (CUDA_FOUND)
 #    -gencode arch=compute_52,code=[sm_52,compute_52]
 #    -gencode arch=compute_61,code=sm_61
 #    -gencode arch=compute_62,code=sm_62
-    -gencode arch=compute_72,code=sm_72 (for Jetson Xavier)
+    -gencode arch=compute_72,code=sm_72 # (for Jetson Xavier)
   )
   add_definitions(-DGPU)
 else()
@@ -206,11 +206,5 @@ install(
   FILES_MATCHING PATTERN "*.h"
 )
 
-# Download yolov3-ycb.weights
-set(FILE "${PATH}/yolov3.weights")
-message(STATUS "Checking and downloading yolov3.weights if needed ...")
-if (NOT EXISTS "${FILE}")
-  message(STATUS "... file does not exist. Downloading now ...")
-  execute_process(COMMAND  wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1jy4E2WyYQuhC9Ki2STeEIE7-iKGXJffd' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1jy4E2WyYQuhC9Ki2STeEIE7-iKGXJffd" -O yolov3-ycb.weights && rm -rf /tmp/cookies.txt -P ${PATH})
-endif()
+
 
