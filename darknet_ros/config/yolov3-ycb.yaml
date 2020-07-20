@@ -10,14 +10,15 @@ yolo_model:
     names:
       - bleach
       - chips
-      - coffee
+      - coffee 
       - cracker
-      - jello
+      - jello 
       - mustard
       - pitcher
       - pottedmeat
       - pudding
       - sugar
       - tomatosoup
-      - tuna 
+      - tuna
       - windex
+
